@@ -13,16 +13,14 @@ def part1():
         part1()
 
 
-print "Do you want to?:"
-print "[1] Enter a string"
-print "[2] Load a string"
+print "Do you want to?: \n [1] Enter a string \n [2] Load a string"
 welcome = raw_input("Please enter your choice: ")
 if welcome == '1':
     ask = raw_input("Please enter a string: ")
     now = int(len(ask.split()))
     ask = ask.lower().split(" ")
     numbered = [ask.index(x) for x in ask]
-    savename = raw_input("What would you like to save this data as (eg. oliverreadabook)?: ")
+    savename = raw_input("Please enter a file name for the data (eg. oliverreadabook): ")
     try:
         with open(savename + '.data', 'w') as openfile:
             pickle.dump([ask, numbered], openfile)
@@ -32,7 +30,7 @@ if welcome == '1':
 elif welcome == '2':
     global finallist
     finallist =[]
-    filetoopen = raw_input("What is the file name that you would like to open (eg. oliverreadabook)?: ")
+    filetoopen = raw_input("Please enter the filename for the data (eg. oliverreadabook): ")
     try:
         with open(filetoopen + '.data') as openfile:
             ask, numbered = pickle.load(openfile)
