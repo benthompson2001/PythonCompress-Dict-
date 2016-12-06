@@ -9,7 +9,6 @@ def part1():
     if k < now:
         finallist.append(ask[numbered[k]])
         k += 1
-        #time.sleep(1)
         part1()
 
 
