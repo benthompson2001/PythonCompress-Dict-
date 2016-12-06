@@ -1,7 +1,7 @@
 from collections import OrderedDict
 import pickle
 import time
-global k
+
 k = 0
 def part1():
     global k
@@ -13,9 +13,9 @@ def part1():
         part1()
 
 
-print("Do you want to?: \n [1] Enter a string \n [2] Load a string")
-welcome = input("Please enter your choice: ")
-if welcome == '1':
+
+promptnumber = input("Do you want to?: \n     [1] Enter a string \n     [2] Load a string \nPlease enter your choice: ")
+if promptnumber == '1':
     ask = input("Please enter a string: ")
     now = int(len(ask.split()))
     ask = ask.lower().split(" ")
@@ -27,8 +27,8 @@ if welcome == '1':
     except:
         with open(savename + '.data', 'wb') as openfile:
             pickle.dump([ask, numbered], openfile)
-elif welcome == '2':
-    global finallist
+elif promptnumber == '2':
+    global finallist = []
     finallist =[]
     filetoopen = input("Please enter the filename for the data (eg. oliverreadabook): ")
     try:
