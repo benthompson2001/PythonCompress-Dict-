@@ -1,7 +1,5 @@
 from collections import OrderedDict
 import pickle
-import time
-
 k = 0
 def part1():
     global k
